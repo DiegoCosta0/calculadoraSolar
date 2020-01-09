@@ -1,0 +1,19 @@
+
+<div>
+    <table class="zui-table">
+        <thead>
+            <tr>
+                <th>ação</th>
+                <th>id</th>
+                <th>título</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let message of messages">
+                <td>{{message.action}}</td>
+                <td>{{message.id}}</td>
+                <td>{{message.obj.title}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
