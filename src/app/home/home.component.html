@@ -65,4 +65,56 @@
       </form>
     </div>
   </div>
+
+
+
+  <div class="mt-5" *ngIf="result.kw">
+    <div class="card">
+      <div class="card-header">
+        SISTEMA ESPECIFICADO {{result.kw}}
+      </div>
+      <div class="card-body">
+        <div class="form-group col-4">
+          <label>
+            Potência do Sistema Indicado:
+          </label>
+          <input type="text"
+                 name="kw"
+                 class="form-control"
+                 disabled="true"
+                 [(ngModel)]="result.kw"/>
+        </div>
+        <!-- <div class="form-group col-4">
+          <label>
+            Geração Mensal:
+          </label>
+          <input type="text"
+                 name="kw"
+                 class="form-control"
+                 disabled="true"
+                 [(ngModel)]="result.month"/>
+        </div> -->
+        <div class="form-group col-4">
+          <label>
+            Quantidade de Placas de 345W:
+          </label>
+          <input type="text"
+                 name="boards"
+                 class="form-control"
+                 disabled="true"
+                 [(ngModel)]="result.boards"/>
+        </div>
+        <div class="form-group col-4">
+          <label>
+            Área Ocupada:
+          </label>
+          <input type="text"
+                 name="area"
+                 class="form-control"
+                 disabled="true"
+                 [(ngModel)]="result.area"/>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
