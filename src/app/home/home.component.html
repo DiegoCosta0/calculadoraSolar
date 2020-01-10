@@ -1,2 +1,68 @@
-<input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
-<button (click)="sendMessage()">Cadastrar</button>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <h2 style="text-align: center;">Calculadora Solar</h2>
+    </div>
+  </div>
+
+  <!-- <div class="row mt-1">
+    <div class="col">
+      <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        <strong>Exemplo de alerta</strong> o botão de fechar funciona.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row mt-5">
+    <div class="col">
+      <form (ngSubmit)="submit(calculate)">
+        <div class="form-group">
+          <label>
+            Estado:
+          </label>
+          <select class="form-control"
+                  name="calculate_state_id"
+                  (change)="setCity(calculate.state_id)"
+                  [(ngModel)]="calculate.state_id">
+                  <option *ngFor="let state of states"
+                          [value]="state.id">
+                    {{state.nome}}
+                  </option>
+         </select>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Cidade:
+          </label>
+          <select class="form-control"
+                  name="calculate_city_id"
+                  [(ngModel)]="calculate.city_id">
+                  <option *ngFor="let city of citys"
+                          [value]="city.id">
+                    {{city.nome}}
+                  </option>
+         </select>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Consumo em kWh:
+          </label>
+          <input type="number"
+                 name="calculate_consumption"
+                 class="form-control"
+                 [(ngModel)]="calculate.consumption"/>
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+          Calcular
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
